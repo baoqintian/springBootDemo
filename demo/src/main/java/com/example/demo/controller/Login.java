@@ -3,11 +3,15 @@ package com.example.demo.controller;
 import com.example.demo.dao.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.LoginService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,22 +28,32 @@ import java.util.Map;
 @Controller
 public class Login {
 
+    private final Logger log = LoggerFactory.getLogger(Login.class);
 
-   @Autowired
-   LoginService loginService;
+    private final LoginService loginService;
+
+    public Login(LoginService loginService) {
+        this.loginService = loginService;
+    }
+
+    @RequestMapping("/index")
+    public String home() {
+        //对应到templates文件夹下面的index
+        return "hello";
+    }
 
 
 
-    @GetMapping("/test")
-    public String login (HttpServletRequest request) {
+    @PostMapping("/test")
+    public String login (@RequestBody Map<String, String> map, HttpServletResponse response) {
         System.out.println("aaaa");
-        String userName = request.getParameter("userName");
-        String password = request.getParameter("password");
-        Map<String,String> mapRuslt = loginService.isExistUser(userName,password);
-//        if ("YES".equals(mapRuslt.get("result"))) {
-//            session.setAttribute("loginUser",userName);
-//            return "/hello";
-//        }
+        String userName = map.get("userName");
+        String password = map.get("password");
+
+        if ("zhangguofeng".equals(userName) && "123456".equals(password)) {
+            return response.encodeRedirectURL("/index");
+        }
+        //Map<String,String> mapRuslt = loginService.isExistUser(userName,password);
 
 
         return null;

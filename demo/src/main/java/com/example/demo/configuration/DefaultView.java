@@ -26,18 +26,19 @@ public class DefaultView extends WebMvcConfigurerAdapter {
      */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("forward:/hello");
-        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
-        super.addViewControllers(registry);
+//        registry.addViewController("/").setViewName("forward:/hello");
+//        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
+//        registry.addViewController("/hello.html").setViewName("hello");
+//        super.addViewControllers(registry);
     }
 
     // 注册拦截器
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        // 添加拦截的请求，并排除几个不拦截的请求
-        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-                .excludePathPatterns("/index.html", "/", "/hello");
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        // 添加拦截的请求，并排除几个不拦截的请求
+//        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
+//                .excludePathPatterns("/index.html", "/", "/hello");
+//    }
 
 }
 

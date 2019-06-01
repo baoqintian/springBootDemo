@@ -22,17 +22,19 @@ $(document).ready(function () {
             var userName=$("#LoginUsername").val();
             var password=$("#LoginPassword").val();
             var data={
-                id:3,
                 userName:userName,
-                password:password,
-                age:30
+                password:password
             };
+
+            // data = data.serializeJSON();
+
             $.ajax({
-                type: "GET", //GET或POST,
+                type: "POST", //GET或POST,
                 async:true, //默认设置为true，所有请求均为异步请求。
                 url: "http://localhost:8080/test",
-                data: data,
-                dataType: "json", //xml、html、script、jsonp、text
+                data:  JSON.stringify(data),
+                dataType: "json", //xml、html、script、jsonp、text,
+                contentType: "application/json;charset=utf-8",
                 beforeSend:function(){},
                 complete:function(){},
                 success: function(data) {
