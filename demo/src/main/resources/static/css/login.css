@@ -1,0 +1,272 @@
+
+@media screen and (min-width:1024px){
+    .wrapper{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("../images/wrapperbg.jpg");
+        background-size: cover;
+    }
+    .center{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1000px;
+        height: 600px;
+        margin: -300px 0 0 -500px;
+    }
+    .register,.login{
+        float: right;
+        margin: 60px 10px 0 0;
+        width: 390px;
+        height: 460px;
+        box-shadow: darkgrey 0px 0px 20px 1px;
+        padding: 50px 35px 0 35px;
+        background-color: #fff;
+        box-sizing:border-box;
+    }
+    .register-head,.login-head{
+        margin-bottom: 15px;
+        height: 25px;
+        line-height: 25px;
+    }
+    .register-head span,.login-head span{
+        display: inline-block;
+    }
+    .user-register{
+        font-size: 16px;
+    }
+    .headered{
+        color: #b8b8b8;
+    }
+    .login-btn,.login-btns{
+        color: #12976a;
+        cursor: pointer;
+    }
+    .message-box{
+        position: relative;
+        height: 45px;
+        line-height: 45px;
+        margin-top: 19px;
+        border:1px solid #ddd;
+    }
+    .message-box span,.message-box input{
+        display: inline-block;
+        border: none;
+        height: 30px;
+    }
+    .spanName{
+        display: inline-block;
+        width: 80px;
+        text-align: right;
+    }
+    .message-box input{
+        width: calc(100% - 80px);
+        padding-left: 15px;
+    }
+    .message-box .verificationBy,.message-box .verificationBys{
+        width: calc(100% - 160px);
+    }
+    .message-box .verificationByBtn,.message-box .inputVerification{
+        width: 80px;
+        text-align: center;
+    }
+    .message-box .verificationByBtn{
+        color: #12976a;
+    }
+    .sub-btn-box{
+        margin-top: 20px;
+    }
+    .sub-btn-box .agreeBtn{
+        display: block;
+        margin:0 auto;
+        width: 140px;
+        height: 40px;
+        line-height: 40px;
+        color: #fff;
+        border: none;
+        text-align: center;
+        background-color: #12976a;
+        cursor: pointer;
+    }
+    /*ç™»å½•*/
+    .forgot-pwd-box{
+        margin-top: 18px;
+        height: 20px;
+    }
+    .forgot-pwd-btn{
+        display: block;
+        height: 20px;
+        text-align: center;
+        color: #12976a;
+        cursor: pointer;
+    }
+    .login-btn-box{
+        margin-top: 20px;
+    }
+    .login-button{
+        display: block;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        color: #fff;
+        border: none;
+        text-align: center;
+        background-color: #12976a;
+        cursor: pointer;
+    }
+    .message-box label.error{
+        position: absolute;
+        top: 31px;
+        right: 0px;
+        height: 20px;
+        color: red;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 1023px){
+    .bg{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("../images/wrapperbg2.jpeg");
+        background-size: cover;
+    }
+    .wrapper{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .center{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        width: 100%;
+        height: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+    .register,.login{
+        margin: 0 auto;
+        width: 80%;
+        height: 750px;
+        padding: 50px 35px 0 35px;
+        border-radius: 3%;
+        opacity: 0.7;
+        background-color: #fff;
+        box-sizing:border-box;
+        box-shadow: darkgrey 0px 0px 20px 1px;
+    }
+    .register-head,.login-head{
+        margin-bottom: 15px;
+        height: 45px;
+        line-height: 45px;
+    }
+    .register-head span,.login-head span{
+        display: inline-block;
+    }
+    .user-register{
+        font-size: 2rem;
+    }
+    .headered{
+        font-size: 1.5rem;
+        color: #b8b8b8;
+    }
+    .login-btn,.login-btns{
+        color: #12976a;
+        cursor: pointer;
+    }
+    .message-box{
+        position: relative;
+        height: 76px;
+        line-height: 76px;
+        margin-top: 42px;
+        border:1px solid #ddd;
+        font-size: 1.5rem;
+    }
+    .message-box span,.message-box input{
+        display: inline-block;
+        border: none;
+        height: 30px;
+    }
+    .spanName{
+        display: inline-block;
+        width: 17%;
+        text-align: right;
+    }
+    .message-box input{
+        width: 83%;
+        padding-left: 15px;
+    }
+    .message-box .verificationBy,.message-box .verificationBys{
+        width: 70%;
+    }
+    .message-box .verificationByBtn,.message-box .inputVerification{
+        width: 12%;
+        text-align: center;
+    }
+    .message-box .verificationByBtn{
+        color: #12976a;
+    }
+    .sub-btn-box{
+        margin-top: 20px;
+    }
+    .sub-btn-box .agreeBtn{
+        display: block;
+        margin: 45px auto 0 auto;
+        width: 100%;
+        height: 60px;
+        line-height: 59px;
+        color: #fff;
+        border: none;
+        text-align: center;
+        background-color: #12976a;
+        cursor: pointer;
+        font-size: 1.3rem;
+    }
+    /*ç™»å½•*/
+    .forgot-pwd-box{
+        margin-top: 12px;
+        height: 35px;
+    }
+    .forgot-pwd-btn{
+        display: block;
+        height: 30px;
+        margin: 21px 0 0px 0;
+        text-align: center;
+        color: #12976a;
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+    .login-btn-box{
+        margin-top: 45px;
+    }
+    .login-button{
+        display: block;
+        width: 100%;
+        margin: 0px auto;
+        height: 70px;
+        line-height: 70px;
+        color: #fff;
+        border: none;
+        text-align: center;
+        background-color: #12976a;
+        cursor: pointer;
+        font-size: 1.6rem;
+    }
+    .message-box label.error{
+        position: absolute;
+        top: 78%;
+        right: 0px;
+        height: 20px;
+        color: red;
+        font-size: 1.3rem;
+    }
+}
