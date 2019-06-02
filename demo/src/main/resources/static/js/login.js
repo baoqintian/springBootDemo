@@ -38,7 +38,7 @@ $(document).ready(function () {
                 beforeSend:function(){},
                 complete:function(){},
                 success: function(data) {
-                    window.open("localhost:8080/hello.html")
+                    window.location.href="/view/hello.html";
                 },
                 error:function(){
                     alert(2)

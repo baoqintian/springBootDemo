@@ -41,12 +41,21 @@ public class Login {
 
 
     @PostMapping("/login")
-    public Map<String, String> login (@RequestBody Map<String, String> map, HttpServletResponse response) {
+    public Map<String, String> login (@RequestBody Map<String, String> map, HttpSession session) {
 
         String userName = map.get("userName");
         String password = map.get("password");
 
-        Map<String,String> mapResult = loginService.isExistUser(userName,password);
+        Map<String,String> mapResult = new HashMap<>();
+
+        if ("zhangguofeng".equals(userName) && "123456".equals(password)) {
+            session.setAttribute("userName", userName);
+            mapResult.put("result", "YES");
+        }else {
+            mapResult.put("result", "NO");
+        }
+
+       // Map<String,String> mapResult = loginService.isExistUser(userName,password);
 
 
         return mapResult;
