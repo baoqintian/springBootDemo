@@ -25,7 +25,9 @@ import java.util.Map;
 * @UpdateRemark:   修改内容
 * @Version:        1.0
 */
-@Controller
+//若返回json等内容到页面，则需要加@ResponseBody注解;@RestController注解相当于@ResponseBody ＋ @Controller合在一起的作用。
+@RestController
+@RequestMapping(value = "/api")
 public class Login {
 
     private final Logger log = LoggerFactory.getLogger(Login.class);
@@ -36,27 +38,18 @@ public class Login {
         this.loginService = loginService;
     }
 
-    @RequestMapping("/index")
-    public String home() {
-        //对应到templates文件夹下面的index
-        return "hello";
-    }
 
 
+    @PostMapping("/login")
+    public Map<String, String> login (@RequestBody Map<String, String> map, HttpServletResponse response) {
 
-    @PostMapping("/test")
-    public String login (@RequestBody Map<String, String> map, HttpServletResponse response) {
-        System.out.println("aaaa");
         String userName = map.get("userName");
         String password = map.get("password");
 
-        if ("zhangguofeng".equals(userName) && "123456".equals(password)) {
-            return response.encodeRedirectURL("/index");
-        }
-        //Map<String,String> mapRuslt = loginService.isExistUser(userName,password);
+        Map<String,String> mapResult = loginService.isExistUser(userName,password);
 
 
-        return null;
+        return mapResult;
     }
 }
 

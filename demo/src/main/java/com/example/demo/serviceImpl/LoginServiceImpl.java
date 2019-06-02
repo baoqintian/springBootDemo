@@ -13,8 +13,12 @@ import java.util.Map;
 @Service
 public class LoginServiceImpl implements LoginService {
 
-    @Autowired
-    UserRepository userRepository;
+
+    private final UserRepository userRepository;
+
+    LoginServiceImpl (UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     /**
      * @param userName

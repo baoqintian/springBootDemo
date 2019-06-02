@@ -31,14 +31,14 @@ $(document).ready(function () {
             $.ajax({
                 type: "POST", //GET或POST,
                 async:true, //默认设置为true，所有请求均为异步请求。
-                url: "http://localhost:8080/test",
+                url: "http://localhost:8080/api/login",
                 data:  JSON.stringify(data),
                 dataType: "json", //xml、html、script、jsonp、text,
                 contentType: "application/json;charset=utf-8",
                 beforeSend:function(){},
                 complete:function(){},
                 success: function(data) {
-                    window.open("http://www.baodu.com")
+                    window.open("localhost:8080/hello.html")
                 },
                 error:function(){
                     alert(2)
