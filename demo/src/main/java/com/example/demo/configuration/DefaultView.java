@@ -37,7 +37,7 @@ public class DefaultView  extends WebMvcConfigurerAdapter {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //这条语句的作用是对所有路径应用拦截器，除了 /index.html 以及css、js、images目录下的文件,因为static是静态资源直接访问static目录的文件 。
-        registry.addInterceptor(loginInterceptor).addPathPatterns("/**").excludePathPatterns("/index.html","/css/**","/js/**","/images/**");
+        registry.addInterceptor(loginInterceptor).addPathPatterns("/view/hello.html").excludePathPatterns("/index.html","/css/**","/js/**","/images/**");
         super.addInterceptors(registry);    //较新
 
     }
