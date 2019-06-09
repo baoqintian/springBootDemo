@@ -3,7 +3,7 @@ package com.example.demo.dao;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 public class User {
 
     public User() {

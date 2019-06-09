@@ -4,11 +4,18 @@ import java.util.Map;
 
 public interface LoginService {
     /**
-     *
-     * @param userName
-     * @param password
-     * @return
+     * @param userName: 登入人姓名
+     * @param password: 登入人密码
+     * @return YES 登入成功
      */
     Map<String, String> isExistUser(String userName, String password);
+
+    /**
+     * 注册用户
+     * @param userName: 用户名
+     * @param password  用户密码
+     * @return
+     */
+    Map<String, String> registerUser(String userName, String password)  throws Exception;
 }
 

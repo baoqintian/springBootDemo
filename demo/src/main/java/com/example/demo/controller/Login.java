@@ -39,25 +39,53 @@ public class Login {
     }
 
 
-
+    /**
+     * POST /login  登入验证
+     * @param map: 登入验证信息
+     *           userName: 登入人姓名
+     *           password: 登入人密码
+     * @param session 登入信息正确把登入人信息放在session中
+     * @return result
+     *             YES 登入成功
+     */
     @PostMapping("/login")
     public Map<String, String> login (@RequestBody Map<String, String> map, HttpSession session) {
-
         String userName = map.get("userName");
         String password = map.get("password");
-
-        Map<String,String> mapResult = new HashMap<>();
-
-        if ("zhangguofeng".equals(userName) && "123456".equals(password)) {
-            session.setAttribute("userName", userName);
-            mapResult.put("result", "YES");
-        }else {
-            mapResult.put("result", "NO");
+        Map<String,String> mapResult = null;
+        try {
+            mapResult = loginService.isExistUser(userName,password);
+            if (mapResult.get("result").equals("YES")) {
+                session.setAttribute("userName",userName);
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
         }
+        //返回验证结果
+        return mapResult;
+    }
 
-       // Map<String,String> mapResult = loginService.isExistUser(userName,password);
-
-
+    /**
+     * @POST /register 注册用户
+     * @param map
+     *            userName: 注册人姓名
+     *            password: 注册人密码
+     * @return result
+     *              YES: 注册成功
+     */
+    @PostMapping("/register")
+    public Map<String, String> register(@RequestBody Map<String, String> map) {
+        String userName = map.get("userName");
+        String password = map.get("password");
+        Map<String,String> mapResult = null;
+        try {
+            mapResult = loginService.registerUser(userName,password);
+            if (mapResult.get("result").equals("YES")) {
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        //返回验证结果
         return mapResult;
     }
 }
