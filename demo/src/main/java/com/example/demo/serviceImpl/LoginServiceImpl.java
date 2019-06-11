@@ -4,6 +4,8 @@ import com.example.demo.dao.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@CacheConfig(cacheNames = "emp")
 @Service
 public class LoginServiceImpl implements LoginService {
 
@@ -43,6 +46,13 @@ public class LoginServiceImpl implements LoginService {
         }
 
         return map;
+    }
+
+    //测试缓存
+    @Cacheable(cacheNames = {"emp"})
+    @Override
+    public List<User> findAll() {
+        return userRepository.findAll();
     }
 
     /**

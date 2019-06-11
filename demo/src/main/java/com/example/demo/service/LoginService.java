@@ -1,5 +1,8 @@
 package com.example.demo.service;
 
+import com.example.demo.dao.User;
+
+import java.util.List;
 import java.util.Map;
 
 public interface LoginService {
@@ -17,5 +20,11 @@ public interface LoginService {
      * @return
      */
     Map<String, String> registerUser(String userName, String password)  throws Exception;
+
+    /**
+     * 测试缓存
+     * @return
+     */
+    List<User> findAll();
 }
 
