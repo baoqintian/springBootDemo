@@ -6,6 +6,8 @@ import com.example.demo.service.LoginService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -90,9 +92,29 @@ public class Login {
         return mapResult;
     }
 
-    @GetMapping("test")
+    /**
+     * 测试缓存
+     * @return
+     */
+
+    @GetMapping("test/{id}")
     public List<User> findAll() {
         return loginService.findAll();
     }
+
+    /**
+     * @CachePut 既可以调用方法、又可以更新缓存
+     * @param id
+     * @return
+     */
+
+    /**
+     *
+     * @CacheEvict要求指定一个或多个缓存，使之都受影响。此外，还提供了一个额外的参数allEntries 。
+     * 表示是否需要清除缓存中的所有元素。默认为false，表示不需要。
+     * 当指定了allEntries为true时，Spring Cache将忽略指定的key。有的时候我们需要Cache一下清除所有的元素。
+     */
+
+
 }
 
