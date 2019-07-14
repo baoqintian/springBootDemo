@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.dao.User2;
+import com.example.demo.rabbitmq.HelloSender;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -53,11 +54,5 @@ public class DemoApplicationTests {
         }
         // Assert.assertEquals("aa", operations.get("com.neo.f").getUserName());
     }
-
-
-
-//    @Test
-//    public void contextLoads() {
-//    }
 
 }
