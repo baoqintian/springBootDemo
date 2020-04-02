@@ -8,7 +8,6 @@ import java.util.Date;
 
 /**
  * 生产者发送消息
- *
  */
 @Component
 public class HelloSender {

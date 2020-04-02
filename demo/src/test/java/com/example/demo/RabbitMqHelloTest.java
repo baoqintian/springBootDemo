@@ -30,38 +30,38 @@ public class RabbitMqHelloTest {
      * 单播：点对点
      */
     @Test
-    public void hello()  {
-        Map<String,Object> map = new HashMap<>();
+    public void hello() {
+        Map<String, Object> map = new HashMap<>();
         map.put("msg", "这是第一个消息");
         map.put("data", Arrays.asList("helloworld", 1, 2, 3, true));
-       rabbitTemplate.convertAndSend("amq.direct","hello",map);
+        rabbitTemplate.convertAndSend("amq.direct", "hello", map);
     }
 
     /**
      * 广播
      */
     @Test
-    public void hello2()  {
-        Map<String,Object> map = new HashMap<>();
+    public void hello2() {
+        Map<String, Object> map = new HashMap<>();
         map.put("msg", "这是第一个消息");
         map.put("data", Arrays.asList("helloworld", 1, 2, 3, true));
-        rabbitTemplate.convertAndSend("amq.fanout","",map);
+        rabbitTemplate.convertAndSend("amq.fanout", "", map);
     }
 
     /**
      * 单播：点对点
      */
     @Test
-    public void hello3()  {
+    public void hello3() {
 
-        rabbitTemplate.convertAndSend("amq.direct","hello",new Book("zhangsan", "红楼梦"));
+        rabbitTemplate.convertAndSend("amq.direct", "hello", new Book("zhangsan", "红楼梦"));
     }
 
     @Test
-    public void receice () {
-       Object o = rabbitTemplate.receiveAndConvert("hello");
+    public void receice() {
+        Object o = rabbitTemplate.receiveAndConvert("hello");
         System.out.println("***********************");
-       System.out.println(o);
+        System.out.println(o);
     }
 
     @Test
@@ -73,7 +73,7 @@ public class RabbitMqHelloTest {
         //amqpAdmin.declareQueue(new Queue("amqpAdmin.queue"));
 
         //创建绑定关系
-        amqpAdmin.declareBinding(new Binding("amqpAdmin.queue",Binding.DestinationType.QUEUE,"AmqpAdmin.exchange","queue",null));
+        amqpAdmin.declareBinding(new Binding("amqpAdmin.queue", Binding.DestinationType.QUEUE, "AmqpAdmin.exchange", "queue", null));
 
     }
 }

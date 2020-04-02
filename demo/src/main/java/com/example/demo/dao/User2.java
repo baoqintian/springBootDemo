@@ -1,6 +1,7 @@
 package com.example.demo.dao;
 
 import java.io.Serializable;
+
 public class User2 implements Serializable {
 
 

@@ -47,7 +47,7 @@ public class MailSendTest {
             helper.setTo("1372554219@qq.com");
             helper.setSubject("今晚开会");
             helper.setText("7点30半开会");
-            helper.addAttachment("Snipaste_2019-03-09_22-00-49.png",new File("C:\\Users\\zgf\\Desktop\\新建文件夹 (3)\\Snipaste_2019-03-09_22-00-49.png"));
+            helper.addAttachment("Snipaste_2019-03-09_22-00-49.png", new File("C:\\Users\\zgf\\Desktop\\新建文件夹 (3)\\Snipaste_2019-03-09_22-00-49.png"));
             mailSender.send(message);
         } catch (MessagingException e) {
             e.printStackTrace();

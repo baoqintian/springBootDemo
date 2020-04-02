@@ -19,28 +19,30 @@ $(document).ready(function () {
         focusInvalid: false, //当为false时，验证无效时，没有焦点响应
         onkeyup: false,
         submitHandler: function (form) {   //表单提交句柄,为一回调函数，带一个参数：form
-            var userName=$("#LoginUsername").val();
-            var password=$("#LoginPassword").val();
-            var data={
-                userName:userName,
-                password:password
+            var userName = $("#LoginUsername").val();
+            var password = $("#LoginPassword").val();
+            var data = {
+                userName: userName,
+                password: password
             };
 
             // data = data.serializeJSON();
 
             $.ajax({
                 type: "POST", //GET或POST,
-                async:true, //默认设置为true，所有请求均为异步请求。
+                async: true, //默认设置为true，所有请求均为异步请求。
                 url: "http://localhost:8080/api/login",
-                data:  JSON.stringify(data),
+                data: JSON.stringify(data),
                 dataType: "json", //xml、html、script、jsonp、text,
                 contentType: "application/json;charset=utf-8",
-                beforeSend:function(){},
-                complete:function(){},
-                success: function(data) {
-                    window.location.href="/view/hello.html";
+                beforeSend: function () {
                 },
-                error:function(){
+                complete: function () {
+                },
+                success: function (data) {
+                    window.location.href = "/view/hello.html";
+                },
+                error: function () {
                     alert(2)
                 },
             });
@@ -48,29 +50,29 @@ $(document).ready(function () {
         rules: {
             LoginUsername: {
                 required: true,
-                rangelength:[6,12]
+                rangelength: [6, 12]
             },
             LoginPassword: {
                 required: true,
-                rangelength:[6,12]
+                rangelength: [6, 12]
             },
             LoginCode: {
                 required: true,
-                rangelength:[4,4]
+                rangelength: [4, 4]
             }
         },
-        messages:{
-            LoginUsername:{
-                required:"请输入用户名",
-                rangelength:"请输6-12位用户名"
+        messages: {
+            LoginUsername: {
+                required: "请输入用户名",
+                rangelength: "请输6-12位用户名"
             },
-            LoginPassword:{
+            LoginPassword: {
                 required: "请输入密码",
-                rangelength:"请输6-12位密码"
+                rangelength: "请输6-12位密码"
             },
-            LoginCode:{
+            LoginCode: {
                 required: "请输入验证码",
-                rangelength:"验证码格式不对"
+                rangelength: "验证码格式不对"
             }
         }
     });
@@ -87,37 +89,37 @@ $(document).ready(function () {
         rules: {
             RegisterUsername: {
                 required: true,
-                rangelength:[6,12]
+                rangelength: [6, 12]
             },
             RegisterPassword: {
                 required: true,
-                rangelength:[6,12]
+                rangelength: [6, 12]
             },
             RegisterPassword2: {
                 required: true,
-                equalTo:"#RegisterPassword"
+                equalTo: "#RegisterPassword"
             },
             RegisterCode: {
                 required: true,
-                rangelength:[4,4]
+                rangelength: [4, 4]
             }
         },
-        messages:{
-            RegisterUsername:{
-                required:"请输入用户名",
-                rangelength:"请输6-12位用户名"
+        messages: {
+            RegisterUsername: {
+                required: "请输入用户名",
+                rangelength: "请输6-12位用户名"
             },
-            RegisterPassword:{
+            RegisterPassword: {
                 required: "请输入密码",
-                rangelength:"请输6-12位密码"
+                rangelength: "请输6-12位密码"
             },
-            RegisterPassword2:{
+            RegisterPassword2: {
                 required: "请确认密码",
-                equalTo:"请输入相同密码"
+                equalTo: "请输入相同密码"
             },
-            RegisterCode:{
+            RegisterCode: {
                 required: "请输入验证码",
-                rangelength:"验证码格式不对"
+                rangelength: "验证码格式不对"
             }
         }
     })

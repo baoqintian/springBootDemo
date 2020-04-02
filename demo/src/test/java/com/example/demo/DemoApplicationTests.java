@@ -26,6 +26,7 @@ public class DemoApplicationTests {
 
     /**
      * 测试存储redis字符串类型
+     *
      * @throws Exception
      */
     @Test
@@ -36,20 +37,21 @@ public class DemoApplicationTests {
 
     /**
      * 测试 存储redis 对象
+     *
      * @throws Exception
      */
     @Test
     public void testObj() throws Exception {
-        User2 user=new User2("aa@126.com", "aa", "aa123456", "aa","123");
-        ValueOperations<String, User2> operations=redisTemplate.opsForValue();
+        User2 user = new User2("aa@126.com", "aa", "aa123456", "aa", "123");
+        ValueOperations<String, User2> operations = redisTemplate.opsForValue();
         operations.set("com.neox", user);
-        operations.set("com.neo.f", user,1, TimeUnit.SECONDS);
+        operations.set("com.neo.f", user, 1, TimeUnit.SECONDS);
         Thread.sleep(1000);
         //redisTemplate.delete("com.neo.f");
-        boolean exists=redisTemplate.hasKey("com.neo.f");
-        if(exists){
+        boolean exists = redisTemplate.hasKey("com.neo.f");
+        if (exists) {
             System.out.println("exists is true");
-        }else{
+        } else {
             System.out.println("exists is false");
         }
         // Assert.assertEquals("aa", operations.get("com.neo.f").getUserName());

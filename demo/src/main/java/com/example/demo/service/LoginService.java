@@ -15,14 +15,16 @@ public interface LoginService {
 
     /**
      * 注册用户
+     *
      * @param userName: 用户名
      * @param password  用户密码
      * @return
      */
-    Map<String, String> registerUser(String userName, String password)  throws Exception;
+    Map<String, String> registerUser(String userName, String password) throws Exception;
 
     /**
      * 测试缓存
+     *
      * @return
      */
     List<User> findAll();

@@ -43,7 +43,8 @@ public class RedisConfig extends CachingConfigurerSupport {
     }
 
     /**
-     *  设置redis存储的对象类型时json
+     * 设置redis存储的对象类型时json
+     *
      * @param redisConnectionFactory
      * @return
      * @throws UnknownHostException
@@ -53,7 +54,7 @@ public class RedisConfig extends CachingConfigurerSupport {
     public RedisTemplate<Object, User2> redisTemplate(RedisConnectionFactory redisConnectionFactory) throws UnknownHostException {
         RedisTemplate<Object, User2> template = new RedisTemplate();
         template.setConnectionFactory(redisConnectionFactory);
-        Jackson2JsonRedisSerializer  jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<User2>(User2.class);
+        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<User2>(User2.class);
         template.setDefaultSerializer(jackson2JsonRedisSerializer);
         return template;
     }
@@ -61,7 +62,7 @@ public class RedisConfig extends CachingConfigurerSupport {
     //容器会自动检测到这个CacheManager,并替换原来自带的CacheManager
     @Primary //若配置多个缓存管理器需要有一个默认的缓存管理器
     @Bean
-    public RedisCacheManager myCacheManager(RedisConnectionFactory redisConnectionFactory){
+    public RedisCacheManager myCacheManager(RedisConnectionFactory redisConnectionFactory) {
         RedisSerializer<String> redisSerializer = new StringRedisSerializer();
         //.entryTtl(Duration.ofHours(1)); // 设置缓存有效期一小时
         Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);

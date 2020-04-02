@@ -14,28 +14,38 @@
     <div class="bg"></div>
     <div class="wrapper">
         <div class="center">
-            <div class="login" >
-                    <div class="clear login-head">
-                        <span class="zs-left user-register">用户登录</span>
-                        <span class="zs-right headered">没有账号,<span id="RegisterButton" class="login-btns">立即注册</span></span>
+            <div class="login">
+                <div class="clear login-head">
+                    <span class="zs-left user-register">用户登录</span>
+                    <span class="zs-right headered">没有账号,<span id="RegisterButton" class="login-btns">立即注册</span></span>
+                </div>
+                <form id="LoginForm" action="">
+                    <p class="message-box">
+                        <label for="LoginUsername" class="spanName">用户名</label><input id="LoginUsername"
+                                                                                      name="LoginUsername"
+                                                                                      class="inputUserName" type="text"
+                                                                                      placeholder="请输入用户名"
+                                                                                      autofocus="autofocus">
+                    </p>
+                    <p class="message-box">
+                        <label for="LoginPassword" class="spanName">密码</label><input id="LoginPassword"
+                                                                                     name="LoginPassword"
+                                                                                     type="password"
+                                                                                     placeholder="请输入密码">
+                    </p>
+                    <p class="message-box">
+                        <label for="LoginCode" class="spanName">验证码</label><input id="LoginCode" name="LoginCode"
+                                                                                  class="verificationBys" type="text"
+                                                                                  placeholder="请输入验证码"><span
+                            class="inputVerification">K8BY</span>
+                    </p>
+                    <div class="clear forgot-pwd-box">
+                        <span class="zs-right forgot-pwd-btn">忘记密码?</span>
                     </div>
-                    <form id="LoginForm" action="">
-                        <p class="message-box">
-                            <label for="LoginUsername" class="spanName">用户名</label><input id="LoginUsername" name="LoginUsername" class="inputUserName" type="text" placeholder="请输入用户名" autofocus="autofocus">
-                        </p>
-                        <p class="message-box">
-                            <label for="LoginPassword" class="spanName">密码</label><input id="LoginPassword" name="LoginPassword" type="password" placeholder="请输入密码">
-                        </p>
-                        <p class="message-box">
-                            <label for="LoginCode" class="spanName">验证码</label><input id="LoginCode" name="LoginCode" class="verificationBys" type="text" placeholder="请输入验证码"><span class="inputVerification">K8BY</span>
-                        </p>
-                        <div class="clear forgot-pwd-box">
-                            <span class="zs-right forgot-pwd-btn">忘记密码?</span>
-                        </div>
-                        <p class="login-btn-box">
-                            <input class="login-button" type="submit" value="登录">
-                        </p>
-                    </form>
+                    <p class="login-btn-box">
+                        <input class="login-button" type="submit" value="登录">
+                    </p>
+                </form>
             </div>
             <div class="register" style="display: none">
                 <div class="clear register-head">
@@ -44,16 +54,29 @@
                 </div>
                 <form id="RegisterForm" action="">
                     <p class="message-box">
-                        <label for="RegisterUsername" class="spanName">用户名</label><input id="RegisterUsername" name="RegisterUsername" class="userName" type="text" placeholder="设置用户名,登录系统使用">
+                        <label for="RegisterUsername" class="spanName">用户名</label><input id="RegisterUsername"
+                                                                                         name="RegisterUsername"
+                                                                                         class="userName" type="text"
+                                                                                         placeholder="设置用户名,登录系统使用">
                     </p>
                     <p class="message-box">
-                        <label for="RegisterPassword" class="spanName">密码</label><input id="RegisterPassword" name="RegisterPassword" type="password" placeholder="设置登录密码">
+                        <label for="RegisterPassword" class="spanName">密码</label><input id="RegisterPassword"
+                                                                                        name="RegisterPassword"
+                                                                                        type="password"
+                                                                                        placeholder="设置登录密码">
                     </p>
                     <p class="message-box">
-                        <label for="RegisterPassword2" class="spanName">确认密码</label><input id="RegisterPassword2" name="RegisterPassword2" type="password" placeholder="请再次输入登录密码">
+                        <label for="RegisterPassword2" class="spanName">确认密码</label><input id="RegisterPassword2"
+                                                                                           name="RegisterPassword2"
+                                                                                           type="password"
+                                                                                           placeholder="请再次输入登录密码">
                     </p>
                     <p class="message-box">
-                        <label for="RegisterCode" class="spanName">验证码</label><input id="RegisterCode" name="RegisterCode" class="verificationBys" type="text" placeholder="输入验证码"><span class="inputVerification">YB8K</span>
+                        <label for="RegisterCode" class="spanName">验证码</label><input id="RegisterCode"
+                                                                                     name="RegisterCode"
+                                                                                     class="verificationBys" type="text"
+                                                                                     placeholder="输入验证码"><span
+                            class="inputVerification">YB8K</span>
                     </p>
                     <p class="sub-btn-box">
                         <input class="agreeBtn" type="submit" value="同意协议并注册">
