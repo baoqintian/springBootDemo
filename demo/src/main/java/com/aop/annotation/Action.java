@@ -1,4 +1,4 @@
-package com.org.a.springboot.aop.annotation;
+package com.aop.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

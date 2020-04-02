@@ -1,4 +1,4 @@
-package com.org.a.springboot.aop.aspect;
+package com.aop.aspect;
 
 import java.lang.reflect.Method;
 
@@ -8,7 +8,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
-import com.org.a.springboot.aop.annotation.Action;
+import com.aop.annotation.Action;
 import org.springframework.stereotype.Component;
 
 @Aspect
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class LogAspect {
 
 	// pointCut
-	@Pointcut("@annotation(com.org.a.springboot.aop.annotation.Action)")
+	@Pointcut("@annotation(com.aop.annotation.Action)")
 	public void log() {
 
 	}
