@@ -45,10 +45,12 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
         }
     }
 
+    //postHandler是请求结束执行的，但只有preHandle方法返回true的时候才会执行，
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception {
 
     }
 
+    //afterCompletion是视图渲染完成后才执行，同样需要preHandle返回true，该方法通常用于清理资源等工作。
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {
 
     }
